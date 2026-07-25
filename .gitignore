@@ -1,0 +1,20 @@
+# Secrets / credentials — never commit these
+*.env
+credentials.*
+*.pfx
+*.pem
+secrets.json
+
+# PowerShell
+*.ps1xml
+
+# Azure
+*.publishsettings
+.azure/
+
+# VS Code
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
