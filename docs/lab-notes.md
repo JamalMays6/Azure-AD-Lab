@@ -22,7 +22,7 @@ Each department OU holds a matching security group and its users: `R3dlab01-IT_A
 
 Users are created via `scripts/Add-BulkUsers.ps1`, which reads `data/NewUsers.csv` and places each user in the correct department OU and security group. The CSV drives 20 users across IT, Finance, HR, and Sales — 5 each.
 
-![PowerShell ISE running Add-BulkUsers.ps1](screenshots/powershell-bulk-users-output.jfif)
+![PowerShell ISE running Add-BulkUsers.ps1](screenshots/powershell-bulk-users-output.jpg)
 
 ## GPO: R3dlab01-IT-GPO1 (linked to the IT OU)
 
@@ -30,14 +30,14 @@ Users are created via `scripts/Add-BulkUsers.ps1`, which reads `data/NewUsers.cs
 - Minimum password length: 12 characters
 - Password must meet complexity requirements: Enabled
 
-![GPO password policy settings](screenshots/gpo-password-policy.jfif)
+![GPO password policy settings](screenshots/gpo-password-policy.jpg)
 
 **Inactivity lock** — machine locks after 15 minutes (900 seconds) of inactivity.
 
 **Removable storage** — Computer Configuration → Policies → Administrative Templates → System → Removable Storage Access:
 - All Removable Storage classes: Deny all access — Enabled
 
-![GPO removable storage access settings](screenshots/gpo-removable-storage.jfif)
+![GPO removable storage access settings](screenshots/gpo-removable-storage.jpg)
 
 ### OU-linked GPOs don't set domain password policy
 
