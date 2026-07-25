@@ -54,7 +54,7 @@ azure-ad-lab/
 7. Build the GPO in Group Policy Management, linked to the target OU, and configure password policy, inactivity lock, and removable storage restrictions (see `docs/lab-notes.md` for the exact settings used).
 8. Use `scripts/Manage-AccountTasks.ps1` for day-to-day admin tasks — password resets, disabling departed accounts, unlocking locked-out accounts.
 
-**Before you push:** `Add-BulkUsers.ps1` sets a shared temporary password in plain text (forced to change at first logon). That's fine for a disposable lab domain, but rotate it — or swap in `Read-Host -AsSecureString` — before treating this script as a template for anything real.
+**Before you push:** `Add-BulkUsers.ps1` sets a shared temporary password in plain text (forced to change at first logon). That's fine for a disposable lab domain, but rotate it, or swap in `Read-Host -AsSecureString`, before treating this script as a template for anything real.
 
 
 ## Domain
@@ -90,7 +90,7 @@ Users are created via `scripts/Add-BulkUsers.ps1`, which reads `data/NewUsers.cs
 
 ### OU-linked GPOs don't set domain password policy
 
-Windows enforces one password and account lockout policy per domain for domain (Kerberos) accounts, sourced from the Default Domain Policy — not from whatever GPO is linked to a user's OU. A password policy linked to an OU only affects local accounts on computer objects inside that OU.
+Windows enforces one password and account lockout policy per domain for domain (Kerberos) accounts, sourced from the Default Domain Policy, not from whatever GPO is linked to a user's OU. A password policy linked to an OU only affects local accounts on computer objects inside that OU.
 
 To apply different password requirements to different groups of users within the same domain, use **Fine-Grained Password Policies (PSOs)** instead of an OU-linked GPO.
 
@@ -104,7 +104,7 @@ To apply different password requirements to different groups of users within the
 
 ## Biggest lesson learned
 
-Domain password policy lives at the domain level (or in a Fine-Grained Password Policy), not in a GPO linked to an OU — linking a password policy to an OU only affects local accounts on computer objects in that OU, not domain user accounts. Details in `docs/lab-notes.md`.
+Domain password policy lives at the domain level (or in a Fine-Grained Password Policy), not in a GPO linked to an OU, linking a password policy to an OU only affects local accounts on computer objects in that OU, not domain user accounts. Details in `docs/lab-notes.md`.
 
 ## What's next
 
