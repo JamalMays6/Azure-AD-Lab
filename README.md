@@ -6,7 +6,7 @@ Full walkthrough: [Loom video](https://loom.com/share/a5a64df4242d4ab890a3e684d9
 
 ## Why this lab
 
-Most mid-size and enterprise orgs still run identity through Active Directory — onboarding, department access, password policy, and endpoint lockdown all trace back to a domain controller somewhere. This lab builds one end to end, then documents the decisions (and the mistakes) along the way.
+Most mid-size and enterprise orgs still run identity through Active Directory for onboarding, department access, password policy, and endpoint lockdown all trace back to a domain controller somewhere. This lab builds one end to end, then documents the decisions (and the mistakes) along the way.
 
 ## Architecture
 
